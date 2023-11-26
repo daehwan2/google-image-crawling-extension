@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "크롬익스텐션 테스트",
+  "version": "1.0.0",
+  "description": "익스텐션 테스트입니다.",
+  "icons": {
+    "16": "icons/logo.png",
+    "32": "icons/logo.png",
+    "48": "icons/logo.png",
+    "128": "icons/logo.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "디폴트_타이틀",
+    "default_icon": "icons/logo.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeNetRequestWithHostAccess",
+    "cookies"
+  ]
+}
