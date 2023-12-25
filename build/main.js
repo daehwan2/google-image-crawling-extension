@@ -1,1 +1,1 @@
-console.log("hi2"), console.log("hey man2");
+console.log("main");

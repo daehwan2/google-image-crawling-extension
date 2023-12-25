@@ -17,6 +17,7 @@
     "default_icon": "icons/logo.png",
     "default_popup": "popup.html"
   },
+
   "permissions": [
     "storage",
     "tabs",
@@ -24,5 +25,12 @@
     "declarativeNetRequestFeedback",
     "declarativeNetRequestWithHostAccess",
     "cookies"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/"],
+      "js": ["googleScript.js"],
+      "run_at": "document_end"
+    }
   ]
 }
