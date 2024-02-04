@@ -12,6 +12,7 @@ module.exports = {
     main: PATHS.src + "/main.ts",
     background: PATHS.src + "/background.ts",
     googleScript: PATHS.src + "/googleScript.ts",
+    popup: PATHS.src + "/popup.ts",
   },
   output: {
     path: PATHS.build, // 번들 결과물 위치
