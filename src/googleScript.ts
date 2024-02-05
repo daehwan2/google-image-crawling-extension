@@ -22,13 +22,12 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
   const imageLinkElementList = document.querySelectorAll(".FRuiCf");
 
-  const length =
-    imageLinkElementList.length < 10 ? imageLinkElementList.length : 10;
+  const length = request.imageLength;
 
   for (let i = 0; i < length; i++) {
     const imageLinkElement = imageLinkElementList[i];
     (imageLinkElement as HTMLAnchorElement).click();
-    await sleepMs(500);
+    await sleepMs(1000);
     const imageElement = document.querySelector(`[jsname="JuXqh"]`);
     const imageUrl = imageElement.getAttribute("src");
 
@@ -39,4 +38,6 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
   // 응답을 보내려면 sendResponse를 사용
   sendResponse({ message: "Message received in Content Script!" });
+
+  return true;
 });

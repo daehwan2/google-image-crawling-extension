@@ -8,7 +8,7 @@ const sleep = (ms: number) =>
   });
 
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-  const { message, search } = request;
+  const { message, search, imageLength } = request;
   console.log("Received message from Popup:", request);
 
   // 수신한 데이터에 대한 처리
@@ -20,8 +20,18 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
   console.log(tab);
 
   await sleep(2000);
-  chrome.tabs.sendMessage(tab.id, { search, message: "download-image" });
+  chrome.tabs.sendMessage(
+    tab.id,
+    {
+      search,
+      imageLength,
+      message: "download-image",
+    },
+    (res) => {
+      console.log("응답:", res);
+      if (res) chrome.tabs.remove(tab.id);
+    }
+  );
 
-  // 응답을 보내려면 sendResponse를 사용
-  sendResponse({ message: "Message received in Background Script!" });
+  return true;
 });
