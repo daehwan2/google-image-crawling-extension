@@ -8,6 +8,7 @@ const sleep = (ms: number) =>
   });
 
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+  sendResponse({});
   const { message, search, imageLength } = request;
   console.log("Received message from Popup:", request);
 
@@ -20,18 +21,10 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
   console.log(tab);
 
   await sleep(2000);
-  chrome.tabs.sendMessage(
-    tab.id,
-    {
-      search,
-      imageLength,
-      message: "download-image",
-    },
-    (res) => {
-      console.log("응답:", res);
-      if (res) chrome.tabs.remove(tab.id);
-    }
-  );
-
+  chrome.tabs.sendMessage(tab.id, {
+    search,
+    imageLength,
+    message: "download-image",
+  });
   return true;
 });
