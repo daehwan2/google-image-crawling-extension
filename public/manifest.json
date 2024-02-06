@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "크롬익스텐션 테스트",
+  "name": "Google Image Crawler",
   "version": "1.0.0",
-  "description": "익스텐션 테스트입니다.",
+  "description": "Google Image Crawler",
   "icons": {
     "16": "icons/logo.png",
     "32": "icons/logo.png",
@@ -13,18 +13,16 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "디폴트_타이틀",
+    "default_title": "Google Image Crawler",
     "default_icon": "icons/logo.png",
     "default_popup": "popup.html"
   },
 
   "permissions": [
-    "storage",
     "tabs",
     "declarativeNetRequest",
     "declarativeNetRequestFeedback",
-    "declarativeNetRequestWithHostAccess",
-    "cookies"
+    "declarativeNetRequestWithHostAccess"
   ],
   "content_scripts": [
     {
