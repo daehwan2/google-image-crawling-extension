@@ -18,7 +18,6 @@
     "default_popup": "popup.html"
   },
 
-  "permissions": ["tabs"],
   "content_scripts": [
     {
       "matches": ["https://www.google.com/*"],
