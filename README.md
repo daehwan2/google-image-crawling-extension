@@ -7,8 +7,7 @@ Google Image Auto Download Chrome Extension. 구글 이미지 자동 다운로�
 
 # download link
 
-https://chrome.google.com/webstore/devconsole/0aca2f34-5d74-4e61-9a91-8f48e48ed6ec/hoggjapabhffmkfijmkfhlihfjblefhm/edit?hl=ko
-
+https://chromewebstore.google.com/detail/google-image-crawler/hoggjapabhffmkfijmkfhlihfjblefhm?hl=ko&authuser=0
 
 
 # How to use
